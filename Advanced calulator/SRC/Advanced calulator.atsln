@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Advanced calulator", "Advanced calulator\Advanced calulator.cproj", "{C0EE3548-9410-474E-97B1-F180DD9A3085}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C0EE3548-9410-474E-97B1-F180DD9A3085}.Debug|AVR.ActiveCfg = Debug|AVR
+		{C0EE3548-9410-474E-97B1-F180DD9A3085}.Debug|AVR.Build.0 = Debug|AVR
+		{C0EE3548-9410-474E-97B1-F180DD9A3085}.Release|AVR.ActiveCfg = Release|AVR
+		{C0EE3548-9410-474E-97B1-F180DD9A3085}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
