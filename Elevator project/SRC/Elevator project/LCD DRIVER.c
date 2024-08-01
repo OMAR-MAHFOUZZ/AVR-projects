@@ -5,7 +5,7 @@
  *  Author: PC
  */ 
 
-#define eight_bit_mode
+#define four_bit_mode
 #define CURSOR_DISPLAY 0x0c
 #include "LCD.h"
 #define F_CPU	8000000UL

@@ -19,7 +19,7 @@
 #define RS	1
 #define RW	2
 #define PORT_DATA	'A'
-#define PORT_CONTROL 'B'
+#define PORT_CONTROL 'A'
 void LCD_vsend_char(char data);
 void LCD_vsend_cmd(char cmd);
 void LCD_init(void);

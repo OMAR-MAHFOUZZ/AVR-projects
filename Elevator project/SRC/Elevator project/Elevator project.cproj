@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>6.0</ProjectVersion>
     <ToolchainName>com.Atmel.AVRGCC8</ToolchainName>
-    <ProjectGuid>{c0ee3548-9410-474e-97b1-f180dd9a3085}</ProjectGuid>
+    <ProjectGuid>{a9553d7d-200d-4cdb-9e09-705c04682e51}</ProjectGuid>
     <avrdevice>ATmega32</avrdevice>
     <avrdeviceseries>none</avrdeviceseries>
     <OutputType>Executable</OutputType>
@@ -12,9 +12,9 @@
     <OutputFileName>$(MSBuildProjectName)</OutputFileName>
     <OutputFileExtension>.elf</OutputFileExtension>
     <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
-    <AssemblyName>Advanced calulator</AssemblyName>
-    <Name>Advanced calulator</Name>
-    <RootNamespace>Advanced calulator</RootNamespace>
+    <AssemblyName>Elevator project</AssemblyName>
+    <Name>Elevator project</Name>
+    <RootNamespace>Elevator project</RootNamespace>
     <ToolchainFlavour>Native</ToolchainFlavour>
     <KeepTimersRunning>true</KeepTimersRunning>
     <OverrideVtor>false</OverrideVtor>
@@ -67,16 +67,13 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Advanced calulator.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="copy.c">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="DIO.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="DIO.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Elevator project.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="keypad.c">
@@ -89,6 +86,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="LCD.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="seven_segment.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="seven_segment.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="STD_MACROS.h">
