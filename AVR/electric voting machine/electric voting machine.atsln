@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "electric voting machine", "electric voting machine\electric voting machine.cproj", "{DB9576EA-5D3A-44E3-93A4-B2EF04133B8E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB9576EA-5D3A-44E3-93A4-B2EF04133B8E}.Debug|AVR.ActiveCfg = Debug|AVR
+		{DB9576EA-5D3A-44E3-93A4-B2EF04133B8E}.Debug|AVR.Build.0 = Debug|AVR
+		{DB9576EA-5D3A-44E3-93A4-B2EF04133B8E}.Release|AVR.ActiveCfg = Release|AVR
+		{DB9576EA-5D3A-44E3-93A4-B2EF04133B8E}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
