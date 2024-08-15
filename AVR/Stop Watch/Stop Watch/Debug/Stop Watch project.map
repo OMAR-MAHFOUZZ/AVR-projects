@@ -34,6 +34,7 @@ LOAD DIO.o
 LOAD keypad.o
 LOAD LCD DRIVER.o
 LOAD led_module.o
+LOAD push button.o
 LOAD Stop Watch.o
 LOAD seven_segment.o
 LOAD Timer_driver.o
@@ -134,7 +135,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0xe3e
+.text           0x00000000      0xe70
  *(.vectors)
  .vectors       0x00000000       0x54 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5/crtm32.o
                 0x00000000                __vector_default
@@ -239,36 +240,39 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
                 0x00000950                led_off
                 0x00000958                led_tog
                 0x0000095e                led_read
- .text          0x00000964      0x382 Stop Watch.o
-                0x00000964                main
-                0x00000ca2                __vector_5
-                0x00000cc4                __vector_10
- .text          0x00000ce6       0x4e seven_segment.o
-                0x00000ce6                seven_seg_init
-                0x00000cee                seven_seg_write
- .text          0x00000d34       0xee Timer_driver.o
-                0x00000d34                Timer0_normal_Vinit
-                0x00000d56                timer0_ctc_Vinit
-                0x00000d7c                Timer0_wave_nonpwm
-                0x00000da2                Timer0_wave_fastpwm
-                0x00000dd4                Timer0_wave_phasecorrect
-                0x00000e06                timer2_ovf_init_interrupt
- .text          0x00000e22        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodqi4.o)
- .text          0x00000e22        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
- .text          0x00000e22        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
- .text          0x00000e22        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
-                0x00000e22                . = ALIGN (0x2)
+ .text          0x00000964        0xe push button.o
+                0x00000964                pushbutt_inti
+                0x0000096c                pushbutt_read
+ .text          0x00000972      0x3a6 Stop Watch.o
+                0x00000972                main
+                0x00000cd4                __vector_5
+                0x00000cf6                __vector_10
+ .text          0x00000d18       0x4e seven_segment.o
+                0x00000d18                seven_seg_init
+                0x00000d20                seven_seg_write
+ .text          0x00000d66       0xee Timer_driver.o
+                0x00000d66                Timer0_normal_Vinit
+                0x00000d88                timer0_ctc_Vinit
+                0x00000dae                Timer0_wave_nonpwm
+                0x00000dd4                Timer0_wave_fastpwm
+                0x00000e06                Timer0_wave_phasecorrect
+                0x00000e38                timer2_ovf_init_interrupt
+ .text          0x00000e54        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodqi4.o)
+ .text          0x00000e54        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+ .text          0x00000e54        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
+ .text          0x00000e54        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
+                0x00000e54                . = ALIGN (0x2)
  *(.text.*)
- .text.libgcc   0x00000e22       0x18 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodqi4.o)
-                0x00000e22                __udivmodqi4
- .text.libgcc   0x00000e3a        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x00000e3a        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
- .text.libgcc   0x00000e3a        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
-                0x00000e3a                . = ALIGN (0x2)
+ .text.libgcc   0x00000e54       0x18 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodqi4.o)
+                0x00000e54                __udivmodqi4
+ .text.libgcc   0x00000e6c        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00000e6c        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00000e6c        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
+                0x00000e6c                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000e3a        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
-                0x00000e3a                _exit
-                0x00000e3a                exit
+ .fini9         0x00000e6c        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+                0x00000e6c                _exit
+                0x00000e6c                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -287,11 +291,11 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000e3a        0x4 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+ .fini0         0x00000e6c        0x4 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000e3e                _etext = .
+                0x00000e70                _etext = .
 
-.data           0x00800060       0x1a load address 0x00000e3e
+.data           0x00800060       0x1a load address 0x00000e70
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800060        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5/crtm32.o
@@ -299,6 +303,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .data          0x00800060       0x10 keypad.o
  .data          0x00800070        0x0 LCD DRIVER.o
  .data          0x00800070        0x0 led_module.o
+ .data          0x00800070        0x0 push button.o
  .data          0x00800070        0x0 Stop Watch.o
  .data          0x00800070        0xa seven_segment.o
  .data          0x0080007a        0x0 Timer_driver.o
@@ -322,6 +327,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .bss           0x0080007a        0x0 keypad.o
  .bss           0x0080007a        0x0 LCD DRIVER.o
  .bss           0x0080007a        0x0 led_module.o
+ .bss           0x0080007a        0x0 push button.o
  .bss           0x0080007a        0x2 Stop Watch.o
                 0x0080007a                led_counter
                 0x0080007b                seconds_counter
@@ -338,8 +344,8 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
                 0x0080007d                minutes_counter
                 0x0080007e                hours_counter
                 0x0080007f                PROVIDE (__bss_end, .)
-                0x00000e3e                __data_load_start = LOADADDR (.data)
-                0x00000e58                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00000e70                __data_load_start = LOADADDR (.data)
+                0x00000e8a                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x0080007f        0x0
                 0x0080007f                PROVIDE (__noinit_start, .)
@@ -399,7 +405,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x160
+.debug_aranges  0x00000000      0x180
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x20 DIO.o
@@ -410,77 +416,83 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .debug_aranges
                 0x00000060       0x20 led_module.o
  .debug_aranges
-                0x00000080       0x20 Stop Watch.o
+                0x00000080       0x20 push button.o
  .debug_aranges
-                0x000000a0       0x20 seven_segment.o
+                0x000000a0       0x20 Stop Watch.o
  .debug_aranges
-                0x000000c0       0x20 Timer_driver.o
+                0x000000c0       0x20 seven_segment.o
  .debug_aranges
-                0x000000e0       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodqi4.o)
+                0x000000e0       0x20 Timer_driver.o
  .debug_aranges
-                0x00000100       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+                0x00000100       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodqi4.o)
  .debug_aranges
-                0x00000120       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
+                0x00000120       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
  .debug_aranges
-                0x00000140       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
+                0x00000140       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
+ .debug_aranges
+                0x00000160       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x13fc
+.debug_info     0x00000000     0x14a6
  *(.debug_info)
  .debug_info    0x00000000      0x315 DIO.o
  .debug_info    0x00000315       0xc5 keypad.o
  .debug_info    0x000003da      0x536 LCD DRIVER.o
  .debug_info    0x00000910      0x163 led_module.o
- .debug_info    0x00000a73      0x45e Stop Watch.o
- .debug_info    0x00000ed1       0xd0 seven_segment.o
- .debug_info    0x00000fa1       0xe7 Timer_driver.o
- .debug_info    0x00001088       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodqi4.o)
- .debug_info    0x00001165       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
- .debug_info    0x00001242       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
- .debug_info    0x0000131f       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
+ .debug_info    0x00000a73       0xaa push button.o
+ .debug_info    0x00000b1d      0x45e Stop Watch.o
+ .debug_info    0x00000f7b       0xd0 seven_segment.o
+ .debug_info    0x0000104b       0xe7 Timer_driver.o
+ .debug_info    0x00001132       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodqi4.o)
+ .debug_info    0x0000120f       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+ .debug_info    0x000012ec       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
+ .debug_info    0x000013c9       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev   0x00000000      0x5c5
+.debug_abbrev   0x00000000      0x63f
  *(.debug_abbrev)
  .debug_abbrev  0x00000000       0xde DIO.o
  .debug_abbrev  0x000000de       0x8c keypad.o
  .debug_abbrev  0x0000016a      0x166 LCD DRIVER.o
  .debug_abbrev  0x000002d0       0x87 led_module.o
- .debug_abbrev  0x00000357      0x134 Stop Watch.o
- .debug_abbrev  0x0000048b       0x9e seven_segment.o
- .debug_abbrev  0x00000529       0x4c Timer_driver.o
- .debug_abbrev  0x00000575       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodqi4.o)
- .debug_abbrev  0x00000589       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
- .debug_abbrev  0x0000059d       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
- .debug_abbrev  0x000005b1       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
+ .debug_abbrev  0x00000357       0x7a push button.o
+ .debug_abbrev  0x000003d1      0x134 Stop Watch.o
+ .debug_abbrev  0x00000505       0x9e seven_segment.o
+ .debug_abbrev  0x000005a3       0x4c Timer_driver.o
+ .debug_abbrev  0x000005ef       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodqi4.o)
+ .debug_abbrev  0x00000603       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+ .debug_abbrev  0x00000617       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
+ .debug_abbrev  0x0000062b       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
 
-.debug_line     0x00000000      0x9ce
+.debug_line     0x00000000      0xa16
  *(.debug_line)
  .debug_line    0x00000000      0x13e DIO.o
  .debug_line    0x0000013e       0x5a keypad.o
  .debug_line    0x00000198      0x236 LCD DRIVER.o
  .debug_line    0x000003ce       0x4a led_module.o
- .debug_line    0x00000418      0x227 Stop Watch.o
- .debug_line    0x0000063f       0x47 seven_segment.o
- .debug_line    0x00000686      0x10f Timer_driver.o
- .debug_line    0x00000795       0x92 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodqi4.o)
- .debug_line    0x00000827       0x88 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
- .debug_line    0x000008af       0x91 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
- .debug_line    0x00000940       0x8e c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
+ .debug_line    0x00000418       0x42 push button.o
+ .debug_line    0x0000045a      0x22d Stop Watch.o
+ .debug_line    0x00000687       0x47 seven_segment.o
+ .debug_line    0x000006ce      0x10f Timer_driver.o
+ .debug_line    0x000007dd       0x92 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodqi4.o)
+ .debug_line    0x0000086f       0x88 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+ .debug_line    0x000008f7       0x91 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
+ .debug_line    0x00000988       0x8e c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
 
-.debug_frame    0x00000000      0x370
+.debug_frame    0x00000000      0x3a4
  *(.debug_frame)
  .debug_frame   0x00000000      0x104 DIO.o
  .debug_frame   0x00000104       0x4c keypad.o
  .debug_frame   0x00000150       0xa0 LCD DRIVER.o
  .debug_frame   0x000001f0       0x64 led_module.o
- .debug_frame   0x00000254       0x64 Stop Watch.o
- .debug_frame   0x000002b8       0x44 seven_segment.o
- .debug_frame   0x000002fc       0x74 Timer_driver.o
+ .debug_frame   0x00000254       0x34 push button.o
+ .debug_frame   0x00000288       0x64 Stop Watch.o
+ .debug_frame   0x000002ec       0x44 seven_segment.o
+ .debug_frame   0x00000330       0x74 Timer_driver.o
 
-.debug_str      0x00000000      0x3d9
+.debug_str      0x00000000      0x43a
  *(.debug_str)
  .debug_str     0x00000000      0x15b DIO.o
                                 0x1a1 (size before relaxing)
@@ -490,25 +502,28 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
                                 0x1d7 (size before relaxing)
  .debug_str     0x00000263       0x3b led_module.o
                                  0x9d (size before relaxing)
- .debug_str     0x0000029e       0x6d Stop Watch.o
-                                0x1a1 (size before relaxing)
- .debug_str     0x0000030b       0x3b seven_segment.o
+ .debug_str     0x0000029e       0x61 push button.o
+                                 0x77 (size before relaxing)
+ .debug_str     0x000002ff       0x6d Stop Watch.o
+                                0x187 (size before relaxing)
+ .debug_str     0x0000036c       0x3b seven_segment.o
                                  0xc7 (size before relaxing)
- .debug_str     0x00000346       0x93 Timer_driver.o
+ .debug_str     0x000003a7       0x93 Timer_driver.o
                                 0x15a (size before relaxing)
 
-.debug_loc      0x00000000      0xb94
+.debug_loc      0x00000000      0xbe0
  *(.debug_loc)
  .debug_loc     0x00000000      0x4ed DIO.o
  .debug_loc     0x000004ed      0x10e keypad.o
  .debug_loc     0x000005fb      0x133 LCD DRIVER.o
  .debug_loc     0x0000072e       0xbe led_module.o
- .debug_loc     0x000007ec      0x334 Stop Watch.o
- .debug_loc     0x00000b20       0x74 seven_segment.o
+ .debug_loc     0x000007ec       0x4c push button.o
+ .debug_loc     0x00000838      0x334 Stop Watch.o
+ .debug_loc     0x00000b6c       0x74 seven_segment.o
 
 .debug_macinfo
  *(.debug_macinfo)
-OUTPUT(Real time clock project.elf elf32-avr)
+OUTPUT(Stop Watch project.elf elf32-avr)
 LOAD linker stubs
 
 .debug_ranges   0x00000000       0x18

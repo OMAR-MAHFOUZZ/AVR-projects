@@ -39,6 +39,7 @@ C_SRCS +=  \
 ../keypad.c \
 ../LCD\ DRIVER.c \
 ../led_module.c \
+../push\ button.c \
 ../Stop\ Watch.c \
 ../seven_segment.c \
 ../Timer_driver.c
@@ -55,6 +56,7 @@ DIO.o \
 keypad.o \
 LCD\ DRIVER.o \
 led_module.o \
+push\ button.o \
 Stop\ Watch.o \
 seven_segment.o \
 Timer_driver.o
@@ -65,6 +67,7 @@ DIO.o \
 keypad.o \
 "LCD DRIVER.o" \
 led_module.o \
+"push button.o" \
 "Stop Watch.o" \
 seven_segment.o \
 Timer_driver.o
@@ -75,6 +78,7 @@ DIO.d \
 keypad.d \
 LCD\ DRIVER.d \
 led_module.d \
+push\ button.d \
 Stop\ Watch.d \
 seven_segment.d \
 Timer_driver.d
@@ -85,14 +89,15 @@ DIO.d \
 keypad.d \
 "LCD DRIVER.d" \
 led_module.d \
+"push button.d" \
 "Stop Watch.d" \
 seven_segment.d \
 Timer_driver.d
 
 
-OUTPUT_FILE_PATH +=Real\ time\ clock\ project.elf
+OUTPUT_FILE_PATH +=Stop\ Watch\ project.elf
 
-OUTPUT_FILE_PATH_AS_ARGS +="Real time clock project.elf"
+OUTPUT_FILE_PATH_AS_ARGS +="Stop Watch project.elf"
 
 ADDITIONAL_DEPENDENCIES:=
 
@@ -118,6 +123,12 @@ OUTPUT_FILE_DEP:= ./makedep.mk
 	@echo Finished building: $<
 
 ./led_module.o: .././led_module.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : (AVR_8_bit_GNU_Toolchain_3.4.1_830) 4.6.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -O1 -fpack-struct -fshort-enums -g2 -Wall -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atmega32   -o"$@" "$<" 
+	@echo Finished building: $<
+
+./push\ button.o: .././push\ button.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : (AVR_8_bit_GNU_Toolchain_3.4.1_830) 4.6.2
 	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -O1 -fpack-struct -fshort-enums -g2 -Wall -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atmega32   -o"$@" "$<" 
@@ -173,13 +184,13 @@ all: $(OUTPUT_FILE_PATH) $(ADDITIONAL_DEPENDENCIES)
 $(OUTPUT_FILE_PATH): $(OBJS) $(USER_OBJS) $(OUTPUT_FILE_DEP)
 	@echo Building target: $@
 	@echo Invoking: AVR/GNU Linker : (AVR_8_bit_GNU_Toolchain_3.4.1_830) 4.6.2
-	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -o$(OUTPUT_FILE_PATH_AS_ARGS) $(OBJS_AS_ARGS) $(USER_OBJS) $(LIBS) -Wl,-Map="Real time clock project.map" -Wl,--start-group -Wl,-lm  -Wl,--end-group  -mmcu=atmega32  
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -o$(OUTPUT_FILE_PATH_AS_ARGS) $(OBJS_AS_ARGS) $(USER_OBJS) $(LIBS) -Wl,-Map="Stop Watch project.map" -Wl,--start-group -Wl,-lm  -Wl,--end-group  -mmcu=atmega32  
 	@echo Finished building target: $@
-	"C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-objcopy.exe" -O ihex -R .eeprom -R .fuse -R .lock -R .signature  "Real time clock project.elf" "Real time clock project.hex"
-	"C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-objcopy.exe" -j .eeprom  --set-section-flags=.eeprom=alloc,load --change-section-lma .eeprom=0  --no-change-warnings -O ihex "Real time clock project.elf" "Real time clock project.eep" || exit 0
-	"C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-objdump.exe" -h -S "Real time clock project.elf" > "Real time clock project.lss"
-	"C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-objcopy.exe" -O srec -R .eeprom -R .fuse -R .lock -R .signature  "Real time clock project.elf" "Real time clock project.srec"
-	"C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-size.exe" "Real time clock project.elf"
+	"C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-objcopy.exe" -O ihex -R .eeprom -R .fuse -R .lock -R .signature  "Stop Watch project.elf" "Stop Watch project.hex"
+	"C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-objcopy.exe" -j .eeprom  --set-section-flags=.eeprom=alloc,load --change-section-lma .eeprom=0  --no-change-warnings -O ihex "Stop Watch project.elf" "Stop Watch project.eep" || exit 0
+	"C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-objdump.exe" -h -S "Stop Watch project.elf" > "Stop Watch project.lss"
+	"C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-objcopy.exe" -O srec -R .eeprom -R .fuse -R .lock -R .signature  "Stop Watch project.elf" "Stop Watch project.srec"
+	"C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-size.exe" "Stop Watch project.elf"
 	
 
 
@@ -189,5 +200,5 @@ $(OUTPUT_FILE_PATH): $(OBJS) $(USER_OBJS) $(OUTPUT_FILE_DEP)
 # Other Targets
 clean:
 	-$(RM) $(OBJS_AS_ARGS)$(C_DEPS_AS_ARGS) $(EXECUTABLES) 
-	rm -rf "Real time clock project.elf" "Real time clock project.a" "Real time clock project.hex" "Real time clock project.lss" "Real time clock project.eep" "Real time clock project.map" "Real time clock project.srec"
+	rm -rf "Stop Watch project.elf" "Stop Watch project.a" "Stop Watch project.hex" "Stop Watch project.lss" "Stop Watch project.eep" "Stop Watch project.map" "Stop Watch project.srec"
 	

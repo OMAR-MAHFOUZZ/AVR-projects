@@ -13,6 +13,7 @@
 #include "seven_segment.h"
 #include "led.h"
 #include "Timer_driver.h"
+#include "push button.h"
 #define F_CPU 8000000UL
 #define seg_port 'B'
 #define seg_control 'C'
@@ -23,6 +24,7 @@ int main(void)
 {
 	LCD_init();
 	keypad_vinit();
+	pushbutt_inti('A',6);
 	seven_seg_init(seg_port);
 	DIO_SETPIN_DIR(seg_control,0,1);
 	DIO_SETPIN_DIR(seg_control,1,1);
@@ -36,6 +38,13 @@ int main(void)
 	led_on(seg_control,5);
     while(1)
     {
+		if (pushbutt_read('A',6)==1)
+		{
+			seconds_counter=0;
+			minutes_counter=0;
+			hours_counter=0;
+			led_counter=0;
+		}
 		if (led_counter>=125)
 		{
 			led_tog(seg_control,4);

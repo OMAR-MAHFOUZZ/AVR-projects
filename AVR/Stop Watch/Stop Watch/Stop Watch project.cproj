@@ -13,7 +13,7 @@
     <OutputFileExtension>.elf</OutputFileExtension>
     <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
     <AssemblyName>Real time clock project</AssemblyName>
-    <Name>Real time clock project</Name>
+    <Name>Stop Watch project</Name>
     <RootNamespace>Real time clock project</RootNamespace>
     <ToolchainFlavour>Native</ToolchainFlavour>
     <KeepTimersRunning>true</KeepTimersRunning>
@@ -89,6 +89,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="led_module.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="push button.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="push button.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Stop Watch.c">
